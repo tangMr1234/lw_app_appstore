@@ -8,8 +8,9 @@
       <router-view style="height:100%;"></router-view>
       <!-- 底栏菜单 -->
       <tabbar slot="bottom"
-              v-for="(data,index) in $router.options.routes" v-if="!data.hidden&&$route.meta.tabbar!=false">
-        <tabbar-item v-if="!item.hidden" v-for="(item,index) in data.children"
+              v-for="(data,index) in $router.options.routes" v-if="!data.hidden&&$route.meta.tabbar!=false"
+              :key="index">
+        <tabbar-item v-if="!item.hidden" v-for="(item,index) in data.children" :key="index"
                      :link="item.path"
                      :badge="item.badge"
                      :show-dot="item.showDot"
